@@ -1,4 +1,4 @@
-const CACHE = 'cafes-proto-v1';
+const CACHE = 'cafes-proto-v2';
 const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {

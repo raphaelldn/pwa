@@ -13,13 +13,10 @@
   --crema:#AD7E2C; --cherry:#7C2A2F; --sage:#63715A; --blue:#2E6FED;
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
-body{margin:0; min-height:100vh; background:#E7E1D2; font-family:'IBM Plex Sans', sans-serif; color:var(--ink); display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 12px 60px;}
+body{margin:0; height:100dvh; background:var(--paper); font-family:'IBM Plex Sans', sans-serif; color:var(--ink); overflow:hidden;}
 .mono{font-family:'IBM Plex Mono', monospace;}
 .serif{font-family:'IBM Plex Serif', serif;}
-.proto-switch{display:flex; gap:6px; background:#DAD2BE; padding:4px; border-radius:999px; flex-wrap:wrap; justify-content:center; max-width:420px;}
-.switch-btn{font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.02em; padding:8px 12px; border-radius:999px; border:none; background:transparent; color:var(--ink-soft); cursor:pointer;}
-.switch-btn.active{background:var(--ink); color:var(--paper);}
-.phone{width:390px; max-width:92vw; height:812px; max-height:84vh; background:var(--paper); border-radius:38px; border:9px solid #201C16; overflow:hidden; position:relative; box-shadow:0 30px 60px -20px rgba(0,0,0,.4);}
+.phone{width:100vw; height:100dvh; background:var(--paper); overflow:hidden; position:relative;}
 .screen{position:absolute; inset:0; display:none; flex-direction:column;}
 .screen.active{display:flex;}
 .scroll{overflow-y:auto; flex:1; -ms-overflow-style:none; scrollbar-width:none;}
@@ -201,6 +198,53 @@ textarea{width:100%; min-height:76px; border:1px solid var(--line); border-radiu
 .fab-btn{width:50px;height:50px;border-radius:50%; background:var(--cherry); color:#FBF1E9; display:flex; align-items:center; justify-content:center; margin-top:-24px; box-shadow:0 8px 16px -4px rgba(124,42,47,.5); border:3px solid var(--paper); cursor:pointer;}
 .fab-wrap span{font-size:9.5px; font-family:'IBM Plex Mono',monospace; margin-top:4px; color:var(--ink-soft);}
 
+
+/* ===== INÍCIO (FEED) E PERFIS ===== */
+.feed-scroll{flex:1; overflow-y:auto; padding:6px 18px 24px; -ms-overflow-style:none; scrollbar-width:none;}
+.feed-scroll::-webkit-scrollbar{display:none;}
+.feed-card{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px; margin-bottom:12px;}
+.feed-head{display:flex; align-items:flex-start; gap:10px; margin-bottom:11px;}
+.avatar{width:36px; height:36px; border-radius:50%; background:var(--sage); color:#F5F1E7; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Serif',serif; font-size:13.5px; flex-shrink:0; cursor:pointer;}
+.avatar.sq{border-radius:9px; background:var(--ink);}
+.avatar.lg{width:64px; height:64px; font-size:24px;}
+.feed-who{flex:1; min-width:0; line-height:1.35;}
+.feed-who b{font-size:12.5px; font-weight:600; cursor:pointer;}
+.feed-action{font-size:12.5px; color:var(--ink-soft);}
+.feed-time{font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.06em; color:var(--ink-soft); margin-top:2px;}
+.feed-nota{font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:600; color:var(--cherry); flex-shrink:0;}
+.feed-cafe-box{display:flex; gap:10px; align-items:center; border:1px solid var(--line); border-radius:8px; padding:10px; background:var(--paper-dim); cursor:pointer;}
+.feed-cafe-box .info{flex:1; min-width:0;}
+.feed-recipe-row{display:flex; gap:7px; margin-top:10px;}
+.frm{flex:1; background:var(--paper-dim); border-radius:7px; padding:7px 4px; text-align:center;}
+.frm b{display:block; font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500;}
+.frm span{font-size:8px; letter-spacing:.06em; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;}
+.feed-text{font-size:12.5px; color:var(--ink-soft); line-height:1.5; margin:10px 0 0;}
+.badge-mini{border:1px solid var(--crema); color:var(--crema); border-radius:3px; padding:1px 5px; font-family:'IBM Plex Mono',monospace; font-size:8.5px; letter-spacing:.04em; vertical-align:1px;}
+.badge-mini.verde{border-color:var(--sage); color:var(--sage);}
+
+.profile-top{padding:18px 18px 0; display:flex; gap:16px; align-items:center;}
+.profile-stats{flex:1; display:flex;}
+.pstat{flex:1; text-align:center; cursor:pointer;}
+.pstat b{display:block; font-family:'IBM Plex Serif',serif; font-size:17px;}
+.pstat span{font-size:8.5px; letter-spacing:.05em; color:var(--ink-soft); font-family:'IBM Plex Mono',monospace;}
+.profile-id{padding:12px 18px 0;}
+.profile-name{font-size:19px; margin:0; display:flex; align-items:center; gap:8px;}
+.profile-handle{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-soft); margin-top:2px;}
+.profile-bio{font-size:12.5px; color:var(--ink-soft); line-height:1.55; margin:8px 0 0;}
+.profile-actions{display:flex; gap:8px; padding:14px 18px 0;}
+.follow-btn{flex:1; padding:11px; border-radius:8px; border:none; background:var(--cherry); color:#FBF1E9; font-weight:600; font-size:13px; cursor:pointer; font-family:'IBM Plex Sans',sans-serif;}
+.follow-btn.following{background:transparent; border:1px solid var(--line); color:var(--ink); font-weight:500;}
+.perfil-row{display:flex; align-items:center; gap:10px; padding:12px 0; border-bottom:1px dashed var(--line); cursor:pointer;}
+.perfil-row .info{flex:1; min-width:0;}
+.perfil-row .name{font-size:12.5px; font-weight:600;}
+.perfil-row .meta{font-size:10.5px; color:var(--ink-soft); margin-top:1px;}
+
+.torr-cover{position:relative; height:128px; flex-shrink:0; background:radial-gradient(130% 160% at 10% 0%, #8A6A38 0%, #6B5028 45%, #453218 100%); overflow:visible;}
+.torr-cover .bean{position:absolute; right:-30px; top:-46px; opacity:.16;}
+.torr-cover-top{position:absolute; top:14px; left:14px; right:14px; display:flex; justify-content:space-between; z-index:2;}
+.torr-logo{width:62px; height:62px; border-radius:14px; border:3px solid var(--paper); background:var(--ink); color:var(--paper); display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Serif',serif; font-size:26px; position:absolute; bottom:-26px; left:18px; z-index:3;}
+.torr-link{display:inline-flex; gap:5px; align-items:center; color:var(--crema); font-size:11.5px; font-family:'IBM Plex Mono',monospace; margin-top:8px; cursor:pointer; text-decoration:underline; text-decoration-color:rgba(173,126,44,.4); text-underline-offset:3px;}
+
 /* ===== RODA DE SABORES ===== */
 .wheel-overlay{position:absolute; inset:0; background:var(--paper); z-index:70; display:none; flex-direction:column;}
 .wheel-overlay.open{display:flex;}
@@ -289,15 +333,6 @@ textarea{width:100%; min-height:76px; border:1px solid var(--line); border-radiu
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="apple-touch-icon" href="icon-192.png">
-<style>
-/* Modo app: em telas pequenas o "celular" preenche a tela real */
-@media (max-width: 480px), (display-mode: standalone){
-  body{padding:0; gap:0; background:var(--paper);}
-  .proto-switch{position:fixed; bottom:8px; left:50%; transform:translateX(-50%); z-index:9999; opacity:.15; transition:opacity .2s;}
-  .proto-switch:active, .proto-switch:hover{opacity:1;}
-  .phone{width:100vw; max-width:100vw; height:100dvh; max-height:100dvh; border:none; border-radius:0; box-shadow:none;}
-}
-</style>
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
@@ -305,28 +340,18 @@ if ('serviceWorker' in navigator) {
 </script>
 </head>
 <body>
-
-<div class="proto-switch">
-  <button class="switch-btn active" data-target="screen-cafe">Café</button>
-  <button class="switch-btn" data-target="screen-eval">Avaliação</button>
-  <button class="switch-btn" data-target="screen-diario">Diário</button>
-  <button class="switch-btn" data-target="screen-descobrir">Descobrir</button>
-  <button class="switch-btn" data-target="screen-cadastro">Cadastrar café</button>
-  <button class="switch-btn" data-target="screen-compartilhar">Compartilhar</button>
-</div>
-
 <div class="phone">
 
-  <div class="screen active" id="screen-cafe">
+  <div class="screen" id="screen-cafe">
     <div class="scroll">
       <div class="cafe-hero">
         <svg class="bean" width="220" height="220" viewBox="0 0 100 100"><ellipse cx="50" cy="50" rx="34" ry="46" transform="rotate(18 50 50)" fill="none" stroke="#F5F1E7" stroke-width="1.4"/><path d="M50 8 C 44 30, 44 70, 50 92" stroke="#F5F1E7" stroke-width="1.4" fill="none" transform="rotate(18 50 50)"/></svg>
         <div class="cafe-hero-top">
-          <div class="round-btn"><svg class="icon" style="stroke:#F5F1E7" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
+          <div class="round-btn" onclick="closeCafeScreen()" style="cursor:pointer;" title="Voltar"><svg class="icon" style="stroke:#F5F1E7" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
           <div class="round-btn" onclick="shareCurrentCafe()" style="cursor:pointer;" title="Compartilhar"><svg class="icon" width="17" height="17" style="stroke:#F5F1E7" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.4"/><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="19" r="2.4"/><path d="M8.2 10.7l7.6-4.4M8.2 13.3l7.6 4.4"/></svg></div>
         </div>
         <div class="sca-stamp" id="cafe-sca-stamp"><b id="cafe-sca-val">90.25</b><span>NOTA SCA</span></div>
-        <div class="cafe-hero-bottom"><div class="eyebrow" style="color:#E4E0D2" id="cafe-torr">LUCCA CAFÉS ESPECIAIS</div></div>
+        <div class="cafe-hero-bottom"><div class="eyebrow" style="color:#E4E0D2; cursor:pointer;" id="cafe-torr" onclick="openTorrProfile('lucca')">LUCCA CAFÉS ESPECIAIS</div></div>
       </div>
       <div class="cafe-body">
         <h1 class="serif cafe-title" id="cafe-nome">Café Especial Sítio 3 Barras</h1>
@@ -459,7 +484,7 @@ if ('serviceWorker' in navigator) {
   <div class="screen" id="screen-eval">
     <div class="eval-top">
       <div class="eval-top-row">
-        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" onclick="switchScreen('screen-cafe')" style="cursor:pointer;"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" onclick="switchScreen('screen-cafe', false)" style="cursor:pointer;"><path d="M6 6l12 12M18 6L6 18"/></svg>
         <div class="step-label" id="step-label">PASSO 1 DE 3 · DESCRITIVA</div>
         <div style="width:20px;"></div>
       </div>
@@ -554,7 +579,174 @@ if ('serviceWorker' in navigator) {
 
   </div>
 
-  <div class="screen" id="screen-diario">
+  
+  <!-- ===== TELA: INÍCIO (FEED) ===== -->
+  <div class="screen" id="screen-inicio">
+    <div class="diario-head" style="padding-bottom:12px;">
+      <div class="eyebrow">INÍCIO</div>
+      <h1 class="serif" style="font-size:22px; margin:4px 0 0;">Novidades da sua rede</h1>
+    </div>
+    <div class="feed-scroll">
+
+      <div class="feed-card">
+        <div class="feed-head">
+          <div class="avatar sq" onclick="openTorrProfile('lucca')">L</div>
+          <div class="feed-who"><b onclick="openTorrProfile('lucca')">Lucca Cafés Especiais</b> <span class="badge-mini">TORREFAÇÃO</span> <span class="feed-action">lançou um café novo</span><div class="feed-time">HÁ 2 HORAS</div></div>
+        </div>
+        <div class="feed-cafe-box" onclick="openCafeFromFeed('pilar')">
+          <div class="sheet-swatch" style="background:linear-gradient(135deg,#b09a6a,#7d6a45);"></div>
+          <div class="info"><div class="entry-name">Café Especial Pilar</div><div class="entry-meta">Norte Pioneiro, PR · Natural</div></div>
+          <span class="badge-mini verde">NOVO</span>
+        </div>
+      </div>
+
+      <div class="feed-card">
+        <div class="feed-head">
+          <div class="avatar" style="background:var(--sage);" onclick="openUserProfile('lucas')">LT</div>
+          <div class="feed-who"><b onclick="openUserProfile('lucas')">Lucas Tavares</b> <span class="badge-mini">BARISTA</span> <span class="feed-action">avaliou um café</span><div class="feed-time">HÁ 5 HORAS</div></div>
+          <span class="feed-nota">8,6<span class="nota-max">/9</span></span>
+        </div>
+        <div class="feed-cafe-box" onclick="openCafeFromFeed('fazenda-prata')">
+          <div class="sheet-swatch"></div>
+          <div class="info"><div class="entry-name">Café Especial Fazenda Prata</div><div class="entry-meta">Lucca · Mogiana · Kalita Wave</div></div>
+        </div>
+        <div class="notes-row" style="margin:10px 0 0;"><span class="tag on">Floral ●●●○○</span><span class="tag on">Rapadura ●●●●○</span></div>
+        <p class="feed-text">"Rapadura domina no Kalita, com um floral discreto por trás — bem equilibrado."</p>
+      </div>
+
+      <div class="feed-card">
+        <div class="feed-head">
+          <div class="avatar" style="background:var(--cherry);" onclick="openUserProfile('renata')">RA</div>
+          <div class="feed-who"><b onclick="openUserProfile('renata')">Renata Alves</b> <span class="badge-mini">BARISTA</span> <span class="feed-action">enviou uma receita de V60</span><div class="feed-time">ONTEM</div></div>
+        </div>
+        <div class="feed-cafe-box" onclick="openCafeFromFeed('bioma')">
+          <div class="sheet-swatch" style="background:linear-gradient(135deg, var(--crema), #7A5A22);"></div>
+          <div class="info"><div class="entry-name">Café Especial Bioma</div><div class="entry-meta">Lucca · Cerrado Mineiro</div></div>
+          <span class="badge-mini">PADRÃO</span>
+        </div>
+        <div class="feed-recipe-row"><div class="frm"><b>15g</b><span>DOSE</span></div><div class="frm"><b>250g</b><span>ÁGUA</span></div><div class="frm"><b>92°C</b><span>TEMP.</span></div><div class="frm"><b>2:50</b><span>TEMPO</span></div></div>
+      </div>
+
+      <div class="feed-card">
+        <div class="feed-head">
+          <div class="avatar sq" onclick="openTorrProfile('lucca')">L</div>
+          <div class="feed-who"><b onclick="openTorrProfile('lucca')">Lucca Cafés Especiais</b> <span class="badge-mini">TORREFAÇÃO</span> <span class="feed-action">cadastrou um café no catálogo</span><div class="feed-time">HÁ 2 DIAS</div></div>
+        </div>
+        <div class="feed-cafe-box" onclick="openCafeFromFeed('venturim')">
+          <div class="sheet-swatch" style="background:linear-gradient(135deg,#8a8f6f,#5b6047);"></div>
+          <div class="info"><div class="entry-name">Café Especial Fazenda Venturim</div><div class="entry-meta">Espírito Santo · Canephora</div></div>
+        </div>
+      </div>
+
+      <div class="feed-card">
+        <div class="feed-head">
+          <div class="avatar" style="background:var(--crema);" onclick="openUserProfile('thiago')">TN</div>
+          <div class="feed-who"><b onclick="openUserProfile('thiago')">Thiago Nunes</b> <span class="feed-action">avaliou um café</span><div class="feed-time">HÁ 3 DIAS</div></div>
+          <span class="feed-nota">8,2<span class="nota-max">/9</span></span>
+        </div>
+        <div class="feed-cafe-box" onclick="openCafeFromFeed('morro-preto')">
+          <div class="sheet-swatch" style="background:linear-gradient(135deg, var(--cherry), #4A1A1E);"></div>
+          <div class="info"><div class="entry-name">Café Especial Morro Preto</div><div class="entry-meta">Lucca · Sul de Minas · Espresso</div></div>
+        </div>
+        <p class="feed-text">"Chocolate amargo e caramelo no espresso, corpo bem denso. Ótimo custo-benefício."</p>
+      </div>
+
+    </div>
+    <div class="bottom-nav">
+      <div class="nav-item active" onclick="switchScreen('screen-inicio')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span>Início</span></div>
+      <div class="nav-item" onclick="switchScreen('screen-descobrir')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M15 9l-2 6-6 2 2-6z"/></svg><span>Descobrir</span></div>
+      <div class="fab-wrap"><div class="fab-btn" onclick="openAddModal()"><svg class="icon" style="stroke:#fff" width="22" height="22" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><span>Adicionar</span></div>
+      <div class="nav-item" onclick="switchScreen('screen-diario')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Diário</span></div>
+      <div class="nav-item" onclick="openUserProfile('me')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg><span>Perfil</span></div>
+    </div>
+  </div>
+
+  <!-- ===== TELA: PERFIL DO USUÁRIO ===== -->
+  <div class="screen" id="screen-perfil">
+    <div class="eval-top" style="padding-bottom:0;">
+      <div class="eval-top-row">
+        <svg class="icon" id="perfil-back" width="20" height="20" viewBox="0 0 24 24" onclick="goBackFrom('screen-perfil','screen-inicio')" style="cursor:pointer;"><path d="M15 18l-6-6 6-6"/></svg>
+        <span class="mono" id="perfil-handle-top" style="font-size:12px; color:var(--ink-soft);">@marina.cafes</span>
+        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" style="opacity:.55;"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg>
+      </div>
+    </div>
+    <div class="scroll" style="padding-bottom:20px;">
+      <div class="profile-top">
+        <div class="avatar lg" id="perfil-avatar">MD</div>
+        <div class="profile-stats">
+          <div class="pstat"><b id="perfil-stat-cafes">27</b><span>CAFÉS</span></div>
+          <div class="pstat"><b id="perfil-stat-seguidores">142</b><span>SEGUIDORES</span></div>
+          <div class="pstat"><b id="perfil-stat-seguindo">98</b><span>SEGUINDO</span></div>
+        </div>
+      </div>
+      <div class="profile-id">
+        <h2 class="serif profile-name"><span id="perfil-nome">Marina Duarte</span><span class="badge-mini" id="perfil-badge" style="display:none;">BARISTA</span></h2>
+        <div class="profile-handle" id="perfil-handle">@marina.cafes</div>
+        <p class="profile-bio" id="perfil-bio">Explorando os cafés do Brasil, um método de cada vez. V60 no coração.</p>
+      </div>
+      <div class="profile-actions">
+        <button class="btn-ghost" id="perfil-btn-editar" style="flex:1; text-align:center;">Editar perfil</button>
+        <button class="follow-btn" id="perfil-btn-seguir" style="display:none;" onclick="toggleFollowUser()">Seguir</button>
+      </div>
+      <div style="padding:0 18px;">
+        <div class="tabs" style="margin-top:20px;">
+          <div class="tab active" onclick="setPerfilTab('avaliacoes', this)">Avaliações</div>
+          <div class="tab" onclick="setPerfilTab('receitas', this)">Receitas</div>
+        </div>
+        <div id="perfil-lista"></div>
+      </div>
+    </div>
+    <div class="bottom-nav">
+      <div class="nav-item" onclick="switchScreen('screen-inicio')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span>Início</span></div>
+      <div class="nav-item" onclick="switchScreen('screen-descobrir')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M15 9l-2 6-6 2 2-6z"/></svg><span>Descobrir</span></div>
+      <div class="fab-wrap"><div class="fab-btn" onclick="openAddModal()"><svg class="icon" style="stroke:#fff" width="22" height="22" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><span>Adicionar</span></div>
+      <div class="nav-item" onclick="switchScreen('screen-diario')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Diário</span></div>
+      <div class="nav-item active" onclick="openUserProfile('me')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg><span>Perfil</span></div>
+    </div>
+  </div>
+
+  <!-- ===== TELA: PERFIL DA TORREFAÇÃO ===== -->
+  <div class="screen" id="screen-torrefacao">
+    <div class="scroll">
+      <div class="torr-cover">
+        <svg class="bean" width="200" height="200" viewBox="0 0 100 100"><ellipse cx="50" cy="50" rx="34" ry="46" transform="rotate(18 50 50)" fill="none" stroke="#F5F1E7" stroke-width="1.4"/><path d="M50 8 C 44 30, 44 70, 50 92" stroke="#F5F1E7" stroke-width="1.4" fill="none" transform="rotate(18 50 50)"/></svg>
+        <div class="torr-cover-top">
+          <div class="round-btn" onclick="goBackFrom('screen-torrefacao','screen-inicio')" style="cursor:pointer;" title="Voltar"><svg class="icon" style="stroke:#F5F1E7" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></div>
+          <div class="round-btn" style="cursor:pointer;" title="Compartilhar"><svg class="icon" width="17" height="17" style="stroke:#F5F1E7" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.4"/><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="19" r="2.4"/><path d="M8.2 10.7l7.6-4.4M8.2 13.3l7.6 4.4"/></svg></div>
+        </div>
+        <div class="torr-logo">L</div>
+      </div>
+      <div style="padding:36px 18px 28px;">
+        <span class="badge-mini" style="font-size:9px;">TORREFAÇÃO VERIFICADA ✓</span>
+        <h1 class="serif" style="font-size:22px; margin:8px 0 4px;">Lucca Cafés Especiais</h1>
+        <div class="origin-line"><svg class="icon" width="14" height="14" viewBox="0 0 24 24"><path d="M12 21s-7-5.2-7-11a7 7 0 0114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg><span>Curitiba, PR · desde 2002</span></div>
+        <p class="profile-bio" style="margin-top:10px;">Curadoria de microlotes brasileiros com torra própria. Buscamos fazendas com manejo responsável e perfis sensoriais fora do óbvio — do Cerrado ao Caparaó.</p>
+        <span class="torr-link" onclick="void(0)"><svg class="icon" width="13" height="13" viewBox="0 0 24 24"><path d="M10 14a5 5 0 007.07 0l2.83-2.83a5 5 0 00-7.07-7.07L11.5 5.43"/><path d="M14 10a5 5 0 00-7.07 0L4.1 12.83a5 5 0 007.07 7.07l1.33-1.33"/></svg>luccacafes.com.br</span>
+
+        <div class="profile-stats" style="margin:18px 0 4px; padding:14px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+          <div class="pstat"><b>6</b><span>CAFÉS</span></div>
+          <div class="pstat"><b>1.284</b><span>SEGUIDORES</span></div>
+          <div class="pstat"><b>8,8<span class="nota-max">/9</span></b><span>NOTA MÉDIA</span></div>
+        </div>
+
+        <div class="profile-actions" style="padding:10px 0 0;">
+          <button class="follow-btn" id="torr-btn-seguir" onclick="toggleFollowTorr()">Seguir</button>
+        </div>
+
+        <div class="section-title serif">Catálogo</div>
+        <div class="diario-grid" style="padding:0;">
+          <div class="card entry-card" onclick="openCafeFromFeed('fazenda-prata')" style="cursor:pointer;"><div class="entry-swatch"></div><div class="entry-name">Café Especial Fazenda Prata</div><div class="entry-meta">Mogiana · Natural</div><div class="entry-rating">8,9<span class="nota-max">/9</span></div></div>
+          <div class="card entry-card" onclick="openCafeFromFeed('bioma')" style="cursor:pointer;"><div class="entry-swatch" style="background:linear-gradient(135deg, var(--crema), #7A5A22);"></div><div class="entry-name">Café Especial Bioma</div><div class="entry-meta">Cerrado Mineiro · Ferm. induzida</div><div class="entry-rating">9,0<span class="nota-max">/9</span></div></div>
+          <div class="card entry-card" onclick="openCafeFromFeed('morro-preto')" style="cursor:pointer;"><div class="entry-swatch" style="background:linear-gradient(135deg, var(--cherry), #4A1A1E);"></div><div class="entry-name">Café Especial Morro Preto</div><div class="entry-meta">Sul de Minas · Natural</div><div class="entry-rating">8,7<span class="nota-max">/9</span></div></div>
+          <div class="card entry-card" onclick="openCafeFromFeed('cariama')" style="cursor:pointer;"><div class="entry-swatch"></div><div class="entry-name">Café Especial Cariama</div><div class="entry-meta">Canastra · Honey</div><div class="entry-rating">8,5<span class="nota-max">/9</span></div></div>
+          <div class="card entry-card" onclick="openCafeFromFeed('venturim')" style="cursor:pointer;"><div class="entry-swatch" style="background:linear-gradient(135deg,#8a8f6f,#5b6047);"></div><div class="entry-name">Café Especial Fazenda Venturim</div><div class="entry-meta">Espírito Santo · Canephora</div><div class="entry-rating">8,4<span class="nota-max">/9</span></div></div>
+          <div class="card entry-card" onclick="openCafeFromFeed('pilar')" style="cursor:pointer;"><div class="entry-swatch" style="background:linear-gradient(135deg,#b09a6a,#7d6a45);"></div><div class="entry-name">Café Especial Pilar</div><div class="entry-meta">Norte Pioneiro, PR · Natural</div><div class="entry-rating">8,6<span class="nota-max">/9</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen active" id="screen-diario">
     <div class="diario-head">
       <div class="eyebrow">MEU DIÁRIO</div>
       <h1 class="serif" id="diario-title" style="font-size:22px; margin:4px 0 0;">27 cafés provados</h1>
@@ -603,11 +795,11 @@ if ('serviceWorker' in navigator) {
     </div>
 
     <div class="bottom-nav">
-      <div class="nav-item"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span>Início</span></div>
+      <div class="nav-item" onclick="switchScreen('screen-inicio')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span>Início</span></div>
       <div class="nav-item" onclick="switchScreen('screen-descobrir')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M15 9l-2 6-6 2 2-6z"/></svg><span>Descobrir</span></div>
       <div class="fab-wrap"><div class="fab-btn" onclick="openAddModal()"><svg class="icon" style="stroke:#fff" width="22" height="22" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><span>Adicionar</span></div>
       <div class="nav-item active"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Diário</span></div>
-      <div class="nav-item"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg><span>Perfil</span></div>
+      <div class="nav-item" onclick="openUserProfile('me')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg><span>Perfil</span></div>
     </div>
 
     <div class="modal-overlay" id="add-modal">
@@ -675,11 +867,11 @@ if ('serviceWorker' in navigator) {
       </div>
     </div>
     <div class="bottom-nav">
-      <div class="nav-item" onclick="switchScreen('screen-diario')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span>Início</span></div>
+      <div class="nav-item" onclick="switchScreen('screen-inicio')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 01-1 1h-4v-6H9v6H5a1 1 0 01-1-1z"/></svg><span>Início</span></div>
       <div class="nav-item active"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M15 9l-2 6-6 2 2-6z"/></svg><span>Descobrir</span></div>
       <div class="fab-wrap"><div class="fab-btn" onclick="openAddModal()"><svg class="icon" style="stroke:#fff" width="22" height="22" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div><span>Adicionar</span></div>
       <div class="nav-item" onclick="switchScreen('screen-diario')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span>Diário</span></div>
-      <div class="nav-item"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg><span>Perfil</span></div>
+      <div class="nav-item" onclick="openUserProfile('me')"><svg class="icon" width="19" height="19" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 21c0-4 3.1-6.5 7-6.5s7 2.5 7 6.5"/></svg><span>Perfil</span></div>
     </div>
   </div>
 
@@ -838,7 +1030,7 @@ if ('serviceWorker' in navigator) {
   <div class="screen" id="screen-compartilhar">
     <div class="eval-top">
       <div class="eval-top-row">
-        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" onclick="switchScreen('screen-cafe')" style="cursor:pointer;"><path d="M15 18l-6-6 6-6"/></svg>
+        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" onclick="switchScreen('screen-cafe', false)" style="cursor:pointer;"><path d="M15 18l-6-6 6-6"/></svg>
         <div class="step-label">COMPARTILHAR</div>
         <div style="width:20px;"></div>
       </div>
@@ -920,11 +1112,29 @@ if ('serviceWorker' in navigator) {
 <p class="footnote">Protótipo de alta fidelidade. Diário = mapa de origem · Descobrir = mapa de proximidade. Cadastrar café = fallback do "+" (Diário → + → "Cadastrar um café novo"). Na tela do café, as abas Receitas/Avaliações agora alternam.</p>
 
 <script>
-document.querySelectorAll('.switch-btn').forEach(btn=>{ btn.addEventListener('click', ()=> switchScreen(btn.dataset.target)); });
-function switchScreen(id){
-  document.querySelectorAll('.switch-btn').forEach(b=>b.classList.toggle('active', b.dataset.target===id));
+
+/* A tela "Café" funciona como pop-up: guarda a tela anterior para o botão voltar. */
+let screenHistory = [];
+function currentScreenId(){
+  const el = document.querySelector('.screen.active');
+  return el ? el.id : 'screen-diario';
+}
+function switchScreen(id, pushHistory=true){
+  const current = currentScreenId();
+  if(pushHistory && current !== id){ screenHistory.push(current); }
+  
   document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active', s.id===id));
 }
+function goBackFrom(screenId, fallback){
+  let target = null;
+  while(screenHistory.length){
+    const prev = screenHistory.pop();
+    if(prev !== screenId){ target = prev; break; }
+  }
+  switchScreen(target || fallback, false);
+}
+/* Deep link (sem histórico): voltar leva ao Início */
+function closeCafeScreen(){ goBackFrom('screen-cafe', 'screen-inicio'); }
 
 function radar(el, valuesSets, size=112){
   const axes = ['Fragrância','Sabor','Acidez','Doçura','Corpo','Finalização'];
@@ -1858,6 +2068,128 @@ window.addEventListener('load', ()=>{
   sheetDiario = makeDraggableSheet(document.getElementById('sheet-diario'), document.getElementById('view-mapa'), {peek:120, ratio:0.78});
   sheetDescobrir = makeDraggableSheet(document.getElementById('sheet-descobrir'), document.querySelector('#screen-descobrir .map-view'), {peek:150, ratio:0.72});
 });
+
+/* ===== Início (feed) e Perfis ===== */
+function openCafeFromFeed(id){
+  renderCafeScreen(id);
+  switchScreen('screen-cafe');
+}
+
+const userProfiles = {
+  me:{nome:'Marina Duarte', handle:'@marina.cafes', ini:'MD', cor:'var(--sage)', barista:false, own:true,
+    bio:'Explorando os cafés do Brasil, um método de cada vez. V60 no coração.',
+    cafes:27, seguidores:142, seguindo:98, souSeguidor:false,
+    avaliacoes:[
+      {cafe:'bioma', nome:'Café Especial Bioma', meta:'V60 · modo básico · mai/2026', nota:'9,0', sw:'linear-gradient(135deg, var(--crema), #7A5A22)'},
+      {cafe:'fazenda-prata', nome:'Café Especial Fazenda Prata', meta:'V60 · modo básico · mai/2026', nota:'8,6', sw:''},
+      {cafe:'cariama', nome:'Café Especial Cariama', meta:'Prensa francesa · modo básico · abr/2026', nota:'8,8', sw:''}
+    ],
+    receitas:[
+      {cafe:'bioma', nome:'Café Especial Bioma', meta:'V60 · 15g · 250g · 92°C · 2:50', nota:'9,0', sw:'linear-gradient(135deg, var(--crema), #7A5A22)'},
+      {cafe:'fazenda-prata', nome:'Café Especial Fazenda Prata', meta:'V60 · 15g · 235g · 90°C · 2:20', nota:'8,6', sw:''}
+    ]},
+  lucas:{nome:'Lucas Tavares', handle:'@lucas.brew', ini:'LT', cor:'var(--sage)', barista:true, own:false,
+    bio:'Barista e competidor de brewers. Kalita Wave e métodos de imersão.',
+    cafes:64, seguidores:812, seguindo:203, souSeguidor:false,
+    avaliacoes:[
+      {cafe:'fazenda-prata', nome:'Café Especial Fazenda Prata', meta:'Kalita Wave · modo avançado · jun/2026', nota:'8,6', sw:''},
+      {cafe:'morro-preto', nome:'Café Especial Morro Preto', meta:'Espresso · modo avançado · mai/2026', nota:'8,7', sw:'linear-gradient(135deg, var(--cherry), #4A1A1E)'}
+    ],
+    receitas:[
+      {cafe:'fazenda-prata', nome:'Café Especial Fazenda Prata', meta:'Kalita Wave · 16g · 235g · 91°C · 2:50', nota:'8,6', sw:''}
+    ]},
+  renata:{nome:'Renata Alves', handle:'@renata.alves', ini:'RA', cor:'var(--cherry)', barista:true, own:false,
+    bio:'Head barista na Lucca. Assino as receitas padrão da casa.',
+    cafes:118, seguidores:1954, seguindo:87, souSeguidor:true,
+    avaliacoes:[
+      {cafe:'bioma', nome:'Café Especial Bioma', meta:'V60 · modo avançado · jun/2026', nota:'9,1', sw:'linear-gradient(135deg, var(--crema), #7A5A22)'}
+    ],
+    receitas:[
+      {cafe:'bioma', nome:'Café Especial Bioma', meta:'V60 · 15g · 250g · 92°C · 2:50 · PADRÃO', nota:'9,1', sw:'linear-gradient(135deg, var(--crema), #7A5A22)'}
+    ]},
+  thiago:{nome:'Thiago Nunes', handle:'@thiago.n', ini:'TN', cor:'var(--crema)', barista:false, own:false,
+    bio:'Café coado no fim de semana, espresso no dia a dia.',
+    cafes:19, seguidores:64, seguindo:120, souSeguidor:false,
+    avaliacoes:[
+      {cafe:'morro-preto', nome:'Café Especial Morro Preto', meta:'Espresso · modo básico · jul/2026', nota:'8,2', sw:'linear-gradient(135deg, var(--cherry), #4A1A1E)'}
+    ],
+    receitas:[]}
+};
+
+let perfilAtual = 'me';
+let perfilTab = 'avaliacoes';
+
+function openUserProfile(id){
+  perfilAtual = id;
+  perfilTab = 'avaliacoes';
+  renderPerfil();
+  switchScreen('screen-perfil');
+}
+
+function renderPerfil(){
+  const p = userProfiles[perfilAtual];
+  document.getElementById('perfil-back').style.visibility = p.own ? 'hidden' : 'visible';
+  document.getElementById('perfil-handle-top').textContent = p.handle;
+  const av = document.getElementById('perfil-avatar');
+  av.textContent = p.ini; av.style.background = p.cor;
+  document.getElementById('perfil-stat-cafes').textContent = p.cafes;
+  document.getElementById('perfil-stat-seguidores').textContent = p.seguidores;
+  document.getElementById('perfil-stat-seguindo').textContent = p.seguindo;
+  document.getElementById('perfil-nome').textContent = p.nome;
+  document.getElementById('perfil-badge').style.display = p.barista ? 'inline' : 'none';
+  document.getElementById('perfil-handle').textContent = p.handle;
+  document.getElementById('perfil-bio').textContent = p.bio;
+  document.getElementById('perfil-btn-editar').style.display = p.own ? 'block' : 'none';
+  const btnSeguir = document.getElementById('perfil-btn-seguir');
+  btnSeguir.style.display = p.own ? 'none' : 'block';
+  btnSeguir.textContent = p.souSeguidor ? 'Seguindo ✓' : 'Seguir';
+  btnSeguir.classList.toggle('following', p.souSeguidor);
+  document.querySelectorAll('#screen-perfil .tabs .tab').forEach((t,i)=>t.classList.toggle('active', i===(perfilTab==='avaliacoes'?0:1)));
+  renderPerfilLista();
+}
+
+function renderPerfilLista(){
+  const p = userProfiles[perfilAtual];
+  const itens = p[perfilTab];
+  const host = document.getElementById('perfil-lista');
+  if(!itens.length){
+    host.innerHTML = '<p class="sub" style="text-align:center; padding:24px 0;">Nenhuma receita pública ainda.</p>';
+    return;
+  }
+  host.innerHTML = itens.map(it=>{
+    const sw = it.sw ? ` style="background:${it.sw};"` : '';
+    return `<div class="perfil-row" onclick="openCafeFromFeed('${it.cafe}')"><div class="sheet-swatch"${sw}></div><div class="info"><div class="name">${it.nome}</div><div class="meta">${it.meta}</div></div><span class="rnota mono">${it.nota}<span class="nota-max">/9</span></span></div>`;
+  }).join('');
+}
+
+function setPerfilTab(tab, el){
+  perfilTab = tab;
+  document.querySelectorAll('#screen-perfil .tabs .tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  renderPerfilLista();
+}
+
+function toggleFollowUser(){
+  const p = userProfiles[perfilAtual];
+  p.souSeguidor = !p.souSeguidor;
+  p.seguidores += p.souSeguidor ? 1 : -1;
+  renderPerfil();
+}
+
+/* Perfil da torrefação (Lucca — estático no protótipo) */
+function openTorrProfile(id){
+  switchScreen('screen-torrefacao');
+}
+let torrSeguindo = false;
+function toggleFollowTorr(){
+  torrSeguindo = !torrSeguindo;
+  const b = document.getElementById('torr-btn-seguir');
+  b.textContent = torrSeguindo ? 'Seguindo ✓' : 'Seguir';
+  b.classList.toggle('following', torrSeguindo);
+}
+
+renderPerfil();
+
 </script>
 </body>
 </html>
